@@ -6,7 +6,7 @@ from torch.utils import data
 from pytorch_transformers import BertTokenizer
 
 
-# from https://github.com/Kyubyong/nlp_made_easy
+# adapted from https://github.com/Kyubyong/nlp_made_easy
 class EventDataset(data.Dataset):
     def __init__(self, tagged_sents, tokenizer, tag2idx):
 
@@ -89,7 +89,7 @@ def pad(batch):
     return words, f(x), is_heads, tags, f(y), seqlens
 
 
-# from https://github.com/UKPLab/emnlp2017-bilstm-cnn-crf/blob/d3d24b2549ecda70b704bf6ce7786a8f2b820973/util/BIOF1Validation.py
+# adapted from https://github.com/UKPLab/emnlp2017-bilstm-cnn-crf/blob/d3d24b2549ecda70b704bf6ce7786a8f2b820973/util/BIOF1Validation.py
 def compute_f1_token_basis(predictions, correct, O_Label):
     prec = compute_precision_token_basis(predictions, correct, O_Label)
     rec = compute_precision_token_basis(correct, predictions, O_Label)

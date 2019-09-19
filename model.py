@@ -4,7 +4,7 @@ import torch.nn as nn
 from pytorch_transformers import BertModel
 
 
-# from https://github.com/Kyubyong/nlp_made_easy
+# adapted from https://github.com/Kyubyong/nlp_made_easy
 class Net(nn.Module):
     def __init__(self, vocab_size=None, device='cpu'):
         super().__init__()
